@@ -5,7 +5,7 @@ var generateBtn = document.querySelector("#generate");
 const lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz"; 
 const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
 const numberCharacters = "1234567890";
-const specualCharacters = "!@#$%^&*()~";
+const specialCharacters = "!@#$%^&*()~";
 
 // Functions
 function writePassword() {
@@ -37,20 +37,69 @@ if (isNaN(passwordLength)) {
 // makes sure the user provided a valid number  
 if (passwordLength > 128 || passwordLength < 8) {
   window.alert("Length must be between 8 and 128. Try again");
+  return; 
 
 }
 
 
 // ask the user for password criteria 
+
+// are lowercase letters going to be included?
+var passwordLowercase = window.confirm("Do you want to include lowercase letters?") 
+// are uppercase letters going to be included?
+var passwordUppercase = window.confirm("Do you want to include uppercase letters?") 
+// are numbers going to be included?
+var passwordNumbers = window.confirm("Do you want to include numbers?") 
+// are special characters going to be included?
+var passwordSpecialcharacters = window.confirm("Do you want to include special characters?") 
+
 // make sure we have at least one criteria 
+if ((passwordLowercase === false) && (passwordUppercase === false) && (passwordNumbers === false) && (passwordSpecialcharacters === false)){
+  window.alert("Password must contain at least 1 uppercase, 1 lowercase, 1 number, and 1 special character")
+  return; 
+}
 
 //random select from pool of characters to generate the password 
 
+//assenble the pool of characters for this password 
+var characters = "";
 
+if(passwordLowercase === true) {
+  //include the lowercase letters 
+characters = characters + lowercaseCharacters
+}
+
+if(passwordUppercase=== true) {
+  //include the lowercase letters 
+characters = characters + uppercaseCharacters
+}
+
+if(passwordNumbers === true) {
+  //include the lowercase letters 
+characters = characters + numberCharacters
+}
+
+if(passwordSpecialcharacters === true) {
+  //include the lowercase letters 
+characters = characters + specialCharacters
 }
 
 
+//randomly generate the password from that pool 
+var result = ""; 
+var charactersLength = characters.length 
+
+for (i=0;i<passwordLength;i=i+1) {
+
+//pick character to add
+var randomNumber = Math.random()*charactersLength 
+
+//add character to my result
+result = result + characters.charAt(randomNumber)
+
+}
+return result; 
+}
 // Non function code 
 generateBtn.addEventListener("click", writePassword);
-
 
