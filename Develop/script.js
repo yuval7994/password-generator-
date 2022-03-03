@@ -1,6 +1,7 @@
 // Variables
 var generateBtn = document.querySelector("#generate");
 
+// defines the possible characters a password could have 
 const lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz"; 
 const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
 const numberCharacters = "1234567890";
@@ -18,12 +19,16 @@ function writePassword() {
 }
 
 // function generate our password
-function generatePassword () {
+function generatePassword() {
 
 
 // asks the user for password length 
+var passwordLength = window.prompt("How long should the password be?");
 // makes sure the user provided a valid length 
+if (passwordLength > 128 || passwordLength < 8) {
+  window.alert("Length must be between 8 and 128. Try again")
 
+}
 
 // ask the user for password criteria 
 // make sure we have at least one criteria 
