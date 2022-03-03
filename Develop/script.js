@@ -4,7 +4,7 @@ var generateBtn = document.querySelector("#generate");
 const lowercaseCharacters = "abcdefghijklmnopqrstuvwxyz"; 
 const uppercaseCharacters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; 
 const numberCharacters = "1234567890";
-const specualCharacters = "!@#$%^&*()";
+const specualCharacters = "!@#$%^&*()~";
 
 // Functions
 function writePassword() {
