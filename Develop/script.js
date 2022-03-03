@@ -24,11 +24,22 @@ function generatePassword() {
 
 // asks the user for password length 
 var passwordLength = window.prompt("How long should the password be?");
-// makes sure the user provided a valid length 
+
+//convert password length into an integer 
+passwordLength = parseInt(passwordLength);
+
+
+//cut off function if user entered not a number 
+if (isNaN(passwordLength)) {
+  window.alert("That is not a number. Try again");
+  return; 
+}
+// makes sure the user provided a valid number  
 if (passwordLength > 128 || passwordLength < 8) {
-  window.alert("Length must be between 8 and 128. Try again")
+  window.alert("Length must be between 8 and 128. Try again");
 
 }
+
 
 // ask the user for password criteria 
 // make sure we have at least one criteria 
