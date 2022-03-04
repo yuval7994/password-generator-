@@ -18,12 +18,12 @@ function writePassword() {
 
 }
 
-// function generate our password
+//function to generate password
 function generatePassword() {
 
 
-// asks the user for password length 
-var passwordLength = window.prompt("How long should the password be?");
+//asks the user for password length 
+var passwordLength = window.prompt("How many characters do you wish for the password be?");
 
 //convert password length into an integer 
 passwordLength = parseInt(passwordLength);
@@ -36,7 +36,7 @@ if (isNaN(passwordLength)) {
 }
 // makes sure the user provided a valid number  
 if (passwordLength > 128 || passwordLength < 8) {
-  window.alert("Length must be between 8 and 128. Try again");
+  window.alert("The number of characters must be between 8 and 128. Try again");
   return; 
 
 }
@@ -45,17 +45,17 @@ if (passwordLength > 128 || passwordLength < 8) {
 // ask the user for password criteria 
 
 // are lowercase letters going to be included?
-var passwordLowercase = window.confirm("Do you want to include lowercase letters?") 
+var passwordLowercase = window.confirm("Do you wish to include lowercase letters?") 
 // are uppercase letters going to be included?
-var passwordUppercase = window.confirm("Do you want to include uppercase letters?") 
+var passwordUppercase = window.confirm("Do you wish to include uppercase letters?") 
 // are numbers going to be included?
-var passwordNumbers = window.confirm("Do you want to include numbers?") 
+var passwordNumbers = window.confirm("Do you wish to include numbers?") 
 // are special characters going to be included?
-var passwordSpecialcharacters = window.confirm("Do you want to include special characters?") 
+var passwordSpecialcharacters = window.confirm("Do you wish to include special characters?") 
 
 // make sure we have at least one criteria 
 if ((passwordLowercase === false) && (passwordUppercase === false) && (passwordNumbers === false) && (passwordSpecialcharacters === false)){
-  window.alert("Password must contain at least 1 uppercase, 1 lowercase, 1 number, and 1 special character")
+  window.alert("Password must contain at least 1 uppercase letter, 1 lowercase letter, 1 number, and 1 special character")
   return; 
 }
 
@@ -69,18 +69,18 @@ if(passwordLowercase === true) {
 characters = characters + lowercaseCharacters
 }
 
-if(passwordUppercase=== true) {
-  //include the lowercase letters 
+if(passwordUppercase === true) {
+  //include the uppercase letters 
 characters = characters + uppercaseCharacters
 }
 
 if(passwordNumbers === true) {
-  //include the lowercase letters 
+  //include the numbers 
 characters = characters + numberCharacters
 }
 
 if(passwordSpecialcharacters === true) {
-  //include the lowercase letters 
+  //include the special characters 
 characters = characters + specialCharacters
 }
 
