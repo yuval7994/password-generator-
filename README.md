@@ -8,6 +8,6 @@ Here is a link to the website:
 
 Here is a screenshot of the website:
 
-![passwordgenerator](assets/images/webpage.png)
+![passwordgenerator](Assets/images/webpage.png)
 
 
